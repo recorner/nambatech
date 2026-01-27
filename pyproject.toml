@@ -1,9 +1,9 @@
 [project]
 name = "nambatech"
 authors = [
-    { name = "penvise", email = "westronet@gmail.com"}
+    { name = "recorner", email = "westronet@gmail.com"}
 ]
-description = "Marketplace for refrubsrished items in kenya "
+description = "E-commerce platform for selling refurbished electronics in Kenya - nambatech.com"
 requires-python = ">=3.10"
 readme = "README.md"
 dynamic = ["version"]
