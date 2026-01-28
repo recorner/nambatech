@@ -1,0 +1,176 @@
+{
+ "_comments": "[{\"comment\": \"<div class=\\\"ql-editor read-mode\\\"><p><strong>Purpose:</strong> actual inspection record with resul...\", \"by\": \"Administrator\", \"name\": \"ilr2d2eqvs\"}]",
+ "_liked_by": "[\"Administrator\"]",
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:QI-.YYYY.-.#####",
+ "creation": "2026-01-28 07:40:51.188452",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "details_section",
+  "naming_series",
+  "inspection_date",
+  "warehouse",
+  "column_break_hdex",
+  "item_code",
+  "device_model",
+  "template",
+  "inspector",
+  "serial_no",
+  "etc_section",
+  "overall_result",
+  "grade",
+  "cosmetic_notes",
+  "functional_notes",
+  "tab_2_tab",
+  "qa_inspection_result_section",
+  "inspection_results",
+  "attachments"
+ ],
+ "fields": [
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "label": "Inspection ID"
+  },
+  {
+   "fieldname": "inspection_date",
+   "fieldtype": "Datetime",
+   "label": "Inspection Date"
+  },
+  {
+   "default": "WH-QA-HOLD - LSK",
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "serial_no",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Serial No",
+   "options": "Serial No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hdex",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "serial_no.item_code",
+   "fetch_if_empty": 1,
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item Code",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "device_model",
+   "fieldtype": "Link",
+   "label": "Device Model",
+   "options": "Device Model"
+  },
+  {
+   "fieldname": "template",
+   "fieldtype": "Link",
+   "label": "Template",
+   "options": "QA Checklist Template",
+   "reqd": 1
+  },
+  {
+   "fieldname": "inspector",
+   "fieldtype": "Link",
+   "label": "inspector",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "etc_section",
+   "fieldtype": "Section Break",
+   "label": "etc"
+  },
+  {
+   "fieldname": "overall_result",
+   "fieldtype": "Select",
+   "label": "overall result",
+   "options": "PASS\nREWORK\nFAIL",
+   "reqd": 1
+  },
+  {
+   "fieldname": "grade",
+   "fieldtype": "Select",
+   "label": "grade ",
+   "options": "A\nB\nC\nD",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cosmetic_notes",
+   "fieldtype": "Small Text",
+   "label": "Cosmetics Notes"
+  },
+  {
+   "fieldname": "functional_notes",
+   "fieldtype": "Small Text",
+   "label": "Functional Notes"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Inspection Results"
+  },
+  {
+   "fieldname": "qa_inspection_result_section",
+   "fieldtype": "Section Break",
+   "label": "QA Inspection Result"
+  },
+  {
+   "fieldname": "inspection_results",
+   "fieldtype": "Table",
+   "label": "Results",
+   "options": "QA Inspection Result"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Attach",
+   "label": "Attachments"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-28 08:28:50.807788",
+ "modified_by": "Administrator",
+ "module": "NambaTech",
+ "name": "QA Inspection",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
