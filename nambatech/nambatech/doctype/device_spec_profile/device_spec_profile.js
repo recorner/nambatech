@@ -1,0 +1,8 @@
+// Copyright (c) 2026, penvise and contributors
+// For license information, please see license.txt
+
+// frappe.ui.form.on("Device Spec Profile", {
+// 	refresh(frm) {
+
+// 	},
+// });

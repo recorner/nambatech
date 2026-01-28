@@ -1,0 +1,186 @@
+{
+ "_liked_by": "[\"Administrator\"]",
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:RI-.YYYY.-.#####",
+ "creation": "2026-01-28 09:41:37.028467",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "details_section",
+  "naming_series",
+  "intake_date",
+  "source_type",
+  "supplier",
+  "customer",
+  "column_break_bffi",
+  "intake_warehouse",
+  "item_code",
+  "serial_no",
+  "imei_1",
+  "imei_2",
+  "more_details_section",
+  "initial_cosmetic",
+  "purchase_cost",
+  "expected_sell_band",
+  "status",
+  "column_break_bkaq",
+  "reported_issues"
+ ],
+ "fields": [
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "default": "RI-.MM.YY.DD.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Intake ID",
+   "no_copy": 1,
+   "options": "RI-.MM.YY.DD.-",
+   "print_hide": 1,
+   "report_hide": 1,
+   "set_only_once": 1
+  },
+  {
+   "default": "now",
+   "fieldname": "intake_date",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Intake Date",
+   "reqd": 1
+  },
+  {
+   "default": "Supplier",
+   "fieldname": "source_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Source Type",
+   "options": "Supplier\nCustomer\nTrade-in\nInternal Return",
+   "reqd": 1
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_bffi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "WH-INTAKE - LSK",
+   "fieldname": "intake_warehouse",
+   "fieldtype": "Link",
+   "label": "Intake WareHouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "item code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "item_code.serial_no_series",
+   "fieldname": "serial_no",
+   "fieldtype": "Link",
+   "label": "Serial No",
+   "options": "Serial No"
+  },
+  {
+   "fieldname": "imei_1",
+   "fieldtype": "Data",
+   "label": "Imei 1"
+  },
+  {
+   "fieldname": "imei_2",
+   "fieldtype": "Data",
+   "label": "Imei 2"
+  },
+  {
+   "fieldname": "more_details_section",
+   "fieldtype": "Section Break",
+   "label": "More Details"
+  },
+  {
+   "fieldname": "initial_cosmetic",
+   "fieldtype": "Select",
+   "label": "initial cosmetic",
+   "options": "Excellent\nGood\nFair\nPoor",
+   "reqd": 1
+  },
+  {
+   "fieldname": "purchase_cost",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Purchase Cost",
+   "non_negative": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "expected_sell_band",
+   "fieldtype": "Select",
+   "label": "Expected Sell Band",
+   "options": "Low\nMid\nHigh"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "status",
+   "options": "RECEIVED\nSERIAL CAPTURED\nIN QA\nREADY\nDEFECTIVE",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_bkaq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reported_issues",
+   "fieldtype": "Small Text",
+   "label": "Reported issues"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-28 11:20:48.945208",
+ "modified_by": "Administrator",
+ "module": "NambaTech",
+ "name": "Refurb Intake",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

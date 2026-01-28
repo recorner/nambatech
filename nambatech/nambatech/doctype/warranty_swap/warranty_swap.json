@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-01-28 12:40:17.513464",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "details_section",
+  "naming_series",
+  "warranty_claim",
+  "customer",
+  "faulty_serial_no",
+  "replacement_serial_no",
+  "swap_date",
+  "column_break_ypir",
+  "outbound_delivery_note",
+  "inbound_stock_entry",
+  "status",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "default": "WS-.MM.DD.YY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Swap Id Series",
+   "options": "WS-.MM.DD.YY.-",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "warranty_claim",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "warranty claim",
+   "options": "Warranty Claim",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "warranty_claim.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Warranty Claim"
+  },
+  {
+   "fetch_from": "warranty_claim.serial_no",
+   "fieldname": "faulty_serial_no",
+   "fieldtype": "Link",
+   "label": "Faulty Serial No",
+   "options": "Warranty Claim"
+  },
+  {
+   "fieldname": "replacement_serial_no",
+   "fieldtype": "Link",
+   "label": "Replacement Serial No",
+   "options": "Serial No"
+  },
+  {
+   "default": "now",
+   "fieldname": "swap_date",
+   "fieldtype": "Datetime",
+   "label": "Swap Date"
+  },
+  {
+   "fieldname": "column_break_ypir",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "outbound_delivery_note",
+   "fieldtype": "Link",
+   "label": "Outbound Delivery Note",
+   "options": "Delivery Note"
+  },
+  {
+   "fieldname": "inbound_stock_entry",
+   "fieldtype": "Link",
+   "label": "Inbound Delivery Note",
+   "options": "Stock Entry"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "DRAFT\nCOMPLETED\nCANCELED"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-28 13:08:18.161095",
+ "modified_by": "Administrator",
+ "module": "NambaTech",
+ "name": "Warranty Swap",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
